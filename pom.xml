@@ -6,7 +6,11 @@
 
     <groupId>cn.lucode</groupId>
     <artifactId>MyNotes2</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>jsoup-study</module>
+    </modules>
 
 
 </project>

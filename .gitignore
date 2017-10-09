@@ -2,4 +2,4 @@
 .gitignore
 .idea/
 MyNotes2.iml
-
+target/
