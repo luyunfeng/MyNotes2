@@ -12,6 +12,7 @@
         <module>jsoup-study</module>
         <module>send-email</module>
         <module>ansj_seg_demo</module>
+        <module>simple-rpc</module>
     </modules>
     <dependencies>
         <dependency>
