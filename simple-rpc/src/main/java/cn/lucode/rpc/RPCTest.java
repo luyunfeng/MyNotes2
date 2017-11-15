@@ -9,6 +9,7 @@ import java.net.InetSocketAddress;
  */
 public class RPCTest {
     public static void main(String[] args) throws IOException {
+        // 启动服务端
         new Thread(new Runnable() {
             @Override
             public void run() {
