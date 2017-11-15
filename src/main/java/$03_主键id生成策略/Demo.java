@@ -31,7 +31,7 @@ public class Demo {
     }
 
     public static void main(String[] args) throws Exception{
-        //System.out.println(Demo.formatIp());
+        //System.out.println(DemoEnum.formatIp());
         byte [] ip={127,-1,-128,-128};
         for (int i=0;i<ip.length;i++) {
             System.out.println(ip[i]);

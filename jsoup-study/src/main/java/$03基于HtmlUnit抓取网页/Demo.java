@@ -19,7 +19,7 @@ public class Demo {
         webClient.setAjaxController(new NicelyResynchronizingAjaxController());
         webClient.getOptions().setTimeout(100000);
         webClient.getOptions().setThrowExceptionOnScriptError(false);
-        HtmlPage rootPage = webClient.getPage("http://qun.qq.com/member.html?has_onekey=1#gid=243869917");
+        HtmlPage rootPage = webClient.getPage("http://blog.csdn.net/a6833916180/article/details/51261009");
 
         System.out.println(rootPage.asText());
 
