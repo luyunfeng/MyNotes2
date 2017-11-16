@@ -66,12 +66,11 @@ public class ServiceCenter implements Server {
         return port;
     }
 
-
     private static class ServiceTask implements Runnable {
-        Socket clent = null;
+        Socket client = null;
 
         public ServiceTask(Socket client) {
-            this.clent = client;
+            this.client = client;
         }
 
         @Override
@@ -80,7 +79,7 @@ public class ServiceCenter implements Server {
             ObjectOutputStream output = null;
             try {
                 // 2.将客户端发送的码流反序列化成对象，反射调用服务实现者，获取执行结果
-                input = new ObjectInputStream(clent.getInputStream());
+                input = new ObjectInputStream(client.getInputStream());
                 String serviceName = input.readUTF();
                 String methodName = input.readUTF();
                 Class<?>[] parameterTypes = (Class<?>[]) input.readObject();
@@ -93,7 +92,7 @@ public class ServiceCenter implements Server {
                 Object result = method.invoke(serviceClass.newInstance(), arguments);
 
                 // 3.将执行结果反序列化，通过socket发送给客户端
-                output = new ObjectOutputStream(clent.getOutputStream());
+                output = new ObjectOutputStream(client.getOutputStream());
                 output.writeObject(result);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -112,9 +111,9 @@ public class ServiceCenter implements Server {
                         e.printStackTrace();
                     }
                 }
-                if (clent != null) {
+                if (client != null) {
                     try {
-                        clent.close();
+                        client.close();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
