@@ -13,6 +13,8 @@
         <module>send-email</module>
         <module>ansj_seg_demo</module>
         <module>simple-rpc</module>
+        <module>webcollector</module>
+        <module>DBUtils</module>
     </modules>
     <dependencies>
         <dependency>
@@ -40,6 +42,29 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.28</version>
         </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160810</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.0.1</version>
+        </dependency>
+        <!-- Thymeleaf 模板引擎 -->
+        <!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf -->
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf</artifactId>
+            <version>3.0.8.RELEASE</version>
+        </dependency>
+
     </dependencies>
 
 

@@ -15,7 +15,7 @@ import java.util.Map;
  * @create 2017/11/22.
  */
 public class demo {
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         Map< String , Object > jsonMap = new HashMap< String , Object>();
         User user=new User();
         user.setAge("22");
@@ -35,10 +35,22 @@ public class demo {
         //System.out.println(((JSONObject)list1.get(0)).get("age"));
         //System.out.println(((User)jsonStrToJavaBeanList(map.get("list").toString()).get(0)).getAge());
     }
+
+    public static void main(String[] args) {
+        User user=new User();
+        user.setAge("22");
+        String s= obj2Json(user);
+        System.out.println(json2Bean(s,User.class).getClass());
+    }
     public static <T> T json2Bean(String json, Class<T> cls) {
         return JSON.parseObject(json, cls);
     }
 
+    /**
+     * 不转换 null
+     * @param map
+     * @return
+     */
     public static String map2JsonWriteMapNullValue(Map map) {
         String json = JSONObject.toJSONString(map, SerializerFeature.WriteMapNullValue);
         return json;
@@ -52,6 +64,10 @@ public class demo {
         return (Map<String,T>)JSON.parse(json);
     }
 
+    public static String obj2Json(Object obj) {
+        String json = JSON.toJSONString(obj);
+        return json;
+    }
 }
 class  User{
     private String name;
