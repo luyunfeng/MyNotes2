@@ -19,9 +19,14 @@ public class Demo {
      */
     public static void textMessage(MessageBean messageBean) {
 
-        String content = "{\"msgtype\": \"" + TYPE_TEXT + "\", \"text\": {\"content\": \"" + messageBean.getNickname() + "\n" + messageBean.getEmail() + "\n" + messageBean.getContent() + "\"}}";
+        String content = "{\"msgtype\": \"" + TYPE_TEXT + 
+                "\", \"text\": {\"content\": \"" +
+                messageBean.getNickname() + "\n" + 
+                messageBean.getEmail() + "\n" + 
+                messageBean.getContent() + "\"}}";
         try {
-            Jsoup.connect(API).header("Content-Type", "application/json").requestBody(content).ignoreContentType(true).post();
+            Jsoup.connect(API).header("Content-Type", "application/json").
+                    requestBody(content).ignoreContentType(true).post();
         } catch (IOException e) {
             System.out.println("发送失败");
         }
@@ -29,7 +34,7 @@ public class Demo {
 
     public static void main(String[] args) {
         MessageBean messageBean=new MessageBean();
-        messageBean.setContent("朱文杰大帅比");
+        messageBean.setContent("沙哈");
         messageBean.setEmail("dsdadasd@qq.com");
         messageBean.setNickname("122");
         textMessage(messageBean);

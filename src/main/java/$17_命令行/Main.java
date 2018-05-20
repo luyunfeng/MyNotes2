@@ -11,7 +11,10 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            Process process = Runtime.getRuntime().exec("top");
+            Process process = Runtime.getRuntime().exec(" \n" +
+                    "tail -100 /Users/lucode/Desktop/project/lucode-for-all/logs/monitor.log");
+
+
             int status = 0;
             status = process.waitFor();
             if (status != 0) {
